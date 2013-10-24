@@ -1,12 +1,13 @@
 var request = require('request');
 
-var User = {
+
+var Movie = {
   get: function(id, callback) {
-    var url = '/user/' + id; 
+    var url = '/movie/' + id; 
 
     if(typeof id === 'function') {
       callback = id;
-      url = '/users';
+      url = '/movies';
     }
 
     request({
@@ -31,7 +32,7 @@ var User = {
 
   create: function(data, callback) {
     request({
-      url: process.config.api + '/user',
+      url: process.config.api + '/movie',
       method: 'POST', 
       json: true,
       body: data
@@ -53,4 +54,4 @@ var User = {
   }
 };
 
-module.exports = User;
+module.exports = Movie;
