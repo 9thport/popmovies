@@ -39,10 +39,25 @@ var Movie = {
     //param, it will return all users    
     this.model.find({}, {__v: 0, _id: 0}, callback);
   },
+          
+  sortByVote: function(callback) {
+    //find will return an array of users. Without a query for the first
+    //param, it will return all users    
+    this.model.find().sort({'votes': 1}).exec(callback);
+  },
 
-  sortBy: function(callback) {
+  sortBy: function(field, callback) {
     //find all movies and sort by paramater
-    this.model.find().sort({ title: 1 }).exec(callback);
+    console.log(field);
+    var sortByField;
+    
+    if (field == 'title') {
+        sortByField = { 'title' : 1 };
+    } else if (field=="votes") {
+        sortByField = { "votes" : 1 };
+    }
+    
+    this.model.find().sort(sortByField).exec(callback);
   },
 
 

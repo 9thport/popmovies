@@ -23,6 +23,7 @@ app.get('/', function(req, res) {
     }
 
     res.render('index', {movies: movies});
+    console.log(movies);
   });
 });
 
@@ -39,6 +40,17 @@ app.get('/movie/:id', function(req, res) {
 
 app.get('/new', function(req, res) {
   res.render('new');
+});
+
+
+app.get('/sortBy/:fieldName', function(req, res) {
+  Movie.sort(req.params.fieldName, function(err, movies) {
+    if(err) {
+      console.log(err);
+      return res.render('index', {movies: []});
+    }
+
+    res.render('index', {movies: movies});  });
 });
 
 //Save a movie, set it to the latest
