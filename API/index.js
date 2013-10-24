@@ -62,6 +62,18 @@ app.get('/movie/:id', function(req, res) {
   });
 });
 
+app.get('/movies/sortBy', function(req, res) {
+  Movie.sortBy(function(err, dudes) {
+    if(err) {
+      res.send({
+        error: err.message
+      });
+    }
+
+    res.send(dudes);
+  });
+});
+
 app.post('/movie', function(req, res) {
   if(!req.body.title) {
     return res.send({

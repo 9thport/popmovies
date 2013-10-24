@@ -46,6 +46,12 @@ var Movie = {
     this.model.find().sort({'votes': 1}).exec(callback);
   },
 
+  sortBy: function(callback) {
+    //find all movies and sort by paramater
+    this.model.find().sort({ title: 1 }).exec(callback);
+  },
+
+
   delete: function(id, callback) {
     this.model.remove({id: id}, callback);
   }
