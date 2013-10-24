@@ -42,6 +42,9 @@ app.get('/new', function(req, res) {
   res.render('new');
 });
 
+app.get('/sortBy/', function(req, res) {
+  res.redirect("/sortBy/title");
+});
 
 app.get('/sortBy/:fieldName', function(req, res) {
   Movie.sort(req.params.fieldName, function(err, movies) {
