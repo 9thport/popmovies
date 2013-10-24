@@ -25,3 +25,6 @@ table {
 		td, th {
 			border: 1px solid white;
 		}
+		
+		.formdiv { width: 100px; float:left;clear:both;overflow:hidden;}
+		.inputdiv {float:left; }

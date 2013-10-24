@@ -1,47 +1,29 @@
+
 <% include header %>
 	<table id="myTable">
 	
-		<!-- header row -->
-		
-	
-	<!--thead>
-		<tr>
-			<th class="c1">Title</th>
-			<th class="c2">Rating</th>
-			<th class="c3">Votes</th>
-		</tr>
-	</thead -->
-	
 	<thead>
-	<% for (var key in movies[0]){  %>  
+		<% for (var key in movies[0]){  %>  
 	
  			<th> <%= key %>  </th>
- 			<% } %>
+ 		<% } %>
 	</thead>
-	
-	
 	
 		<% movies.forEach(function(movie){ %>
  			
 			<tr>
-			
-			
-				<td> <%= movie.title %> </td>
+				<td> <a href="/movie"> <%= movie.title %> </a> </td>
 				<td> <%= movie.rating %> </td>
 				<td> <%= movie.votes %> </td>
+				<td> <%= movie.id %> </td>
+				<td> <img src="<%= movie.image %>" alt="the current movie poster image" > </td>
+				
 			</tr>
-			
-
+	
   		<% }) %>
-  		
-  	<!--tfoot>
-		<tr>
-			<th class="c1">Title</th>
-			<th class="c2">Rating</th>
-			<th class="c3">Votes</th>
-		</tr>
-	</tfoot -->
-			
-  		
+  			
 	</table>
+
+	<button><a href="/new"> Add movie</button>
+	
 <% include footer %>

@@ -1,14 +1,17 @@
 <% include header %>
-<div>
-  Username: <input type="text" name="username"/>
-</div>
-<div>
-  First Name: <input type="text" name="firstName"/>
-</div>
-<div>
-  Last Name: <input type="text" name="lastName"/>
-</div>
-<!-- Wake me up before you... -->
-<input type="button" value="Create" name="gogo"/>
-<script type="text/javascript" src="/new.js"></script>
+
+<form>
+	
+	<label class="formdiv"> Movie title: </label><div class="inputdiv"><input type="text" name="movietitle"></div><br>
+	<label class="formdiv"> Rating: </label><div class="inputdiv"><input type="text" name="rating"></div><br>
+	<label class="formdiv"> Votes: </label><div class="inputdiv"><input type="text" name="votes"></div><br>
+	<label class="formdiv"> Poster: </label><div class="inputdiv"><input type="text" name="imageurl"></div><br>
+
+
+
+</form>	
+	
+
+
+
 <% include footer %>
