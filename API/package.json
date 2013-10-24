@@ -1,0 +1,17 @@
+{
+  "name": "API",
+  "version": "0.0.0",
+  "description": "The API used for data retrieval",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "express": "~3.4.3",
+    "mongoose": "~3.6.20",
+    "node-uuid": "~1.4.1"
+  }
+}
