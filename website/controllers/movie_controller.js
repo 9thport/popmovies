@@ -31,14 +31,14 @@ var Movie = {
   },
 
   sort: function(fieldName, callback){
-    //var url = '/movies/sortBy/' + fieldName; 
-    var url = '/movies/sortBy/';
-/*
+    var url = '/movies/sortBy/' + fieldName; 
+    //var url = '/movies/sortBy/';
+
     if(typeof fieldName === 'function') {
       callback = fieldName;
       url = '/movies';
     }
-*/
+
     request({
       url: process.config.api + url, 
       json: true
