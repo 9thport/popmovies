@@ -46,4 +46,4 @@ var Movie = {
 };
 
 //Allows us to load the model via require
-module.exports = User;
+module.exports = Movie;
