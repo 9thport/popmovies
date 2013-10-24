@@ -44,7 +44,7 @@ app.get('/movie/:id', function(req, res) {
 });
 
 app.post('/movie', function(req, res) {
-  if(!req.body.moviename) {
+  if(!req.body.title) {
     return res.send({
       error: 'Movies require at least a movie name.'
     });
