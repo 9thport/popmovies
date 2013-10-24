@@ -19,6 +19,13 @@ db.once('open', function() {
 //mongoose.connect('mongodb://root:n0d3db@mongo.onmodulus.net:27017/uxar4iDa');
 mongoose.connect('mongodb://root:n0d31234@mongo.onmodulus.net:27017/pY9pimyj');
 
+// MAKE DEFAULT MOVIE
+// app.get('/defmovie', fuction(req, res) {
+//   Movie.create(function(err, item) {
+
+//   })
+// });
+
 app.get('/movies', function(req, res) {
   Movie.getAll(function(err, dudes) {
     if(err) {

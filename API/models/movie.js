@@ -8,7 +8,6 @@ var Movie = {
   init: function(mongoose) {
     //Create a Mongoose Model
     this.model = mongoose.model('Movie', new mongoose.Schema({
-      id: {type: String, required: true, unique: true},
       title: {type: String, required: true, unique: true},
       rating: String,
       votes: Number,
