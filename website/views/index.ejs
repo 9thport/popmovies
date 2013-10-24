@@ -1,14 +1,47 @@
 <% include header %>
-	<table>
+	<table id="myTable">
+	
+		<!-- header row -->
+		
+	
+	<!--thead>
+		<tr>
+			<th class="c1">Title</th>
+			<th class="c2">Rating</th>
+			<th class="c3">Votes</th>
+		</tr>
+	</thead -->
+	
+	<thead>
+	<% for (var key in movies[0]){  %>  
+	
+ 			<th> <%= key %>  </th>
+ 			<% } %>
+	</thead>
+	
+	
+	
 		<% movies.forEach(function(movie){ %>
-
+ 			
 			<tr>
-				<!--  for each attribute of the movie we're currently processing, create one cell for each-->
-				forEach tablerow.length
-				<td>  movi.attribute-1  </td>
+			
+			
+				<td> <%= movie.title %> </td>
+				<td> <%= movie.rating %> </td>
+				<td> <%= movie.votes %> </td>
 			</tr>
 			
 
   		<% }) %>
+  		
+  	<!--tfoot>
+		<tr>
+			<th class="c1">Title</th>
+			<th class="c2">Rating</th>
+			<th class="c3">Votes</th>
+		</tr>
+	</tfoot -->
+			
+  		
 	</table>
 <% include footer %>

@@ -23,6 +23,7 @@ app.get('/', function(req, res) {
     }
 
     res.render('index', {movies: movies});
+    console.log(movies);
   });
 });
 
