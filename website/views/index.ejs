@@ -12,7 +12,7 @@
 		<% movies.forEach(function(movie){ %>
  			
 			<tr>
-				<td> <a href="/movie"> <%= movie.title %> </a> </td>
+				<td> <a href="/movie/<%=movie.id %> "><%= movie.title %> </a> </td>
 				<td> <%= movie.rating %> </td>
 				<td> <%= movie.votes %> </td>
 				<td> <%= movie.id %> </td>
