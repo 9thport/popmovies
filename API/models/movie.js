@@ -39,6 +39,12 @@ var Movie = {
     //param, it will return all users    
     this.model.find({}, {__v: 0, _id: 0}, callback);
   },
+          
+  sortByVote: function(callback) {
+    //find will return an array of users. Without a query for the first
+    //param, it will return all users    
+    this.model.find().sort({'votes': 1}).exec(callback);
+  },
 
   delete: function(id, callback) {
     this.model.remove({id: id}, callback);

@@ -38,6 +38,18 @@ app.get('/movies', function(req, res) {
   });
 });
 
+app.get('/movies/sortByVote', function(req, res) {
+  Movie.sortByVote(function(err, dudes) {
+    if(err) {
+      res.send({
+        error: err.message
+      });
+    }
+
+    res.send(dudes);
+  });
+});
+
 app.get('/movie/:id', function(req, res) {
   Movie.get(req.params.id, function(err, dude) {
     if(err) {
