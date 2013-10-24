@@ -35,6 +35,7 @@ app.get('/movie/:id', function(req, res) {
     }
 
     res.render('movie', movie);
+    console.log("HOLA:" + movie.title);
   });
 });
 
