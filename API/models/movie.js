@@ -8,6 +8,7 @@ var Movie = {
   init: function(mongoose) {
     //Create a Mongoose Model
     this.model = mongoose.model('Movie', new mongoose.Schema({
+      id: {type: String, required: true, unique: true},
       title: {type: String, required: true, unique: true},
       rating: String,
       votes: Number,
@@ -23,7 +24,7 @@ var Movie = {
         return callback(err);
       }
 
-      // usr.id = uuid.v4();
+      theMovie.id = uuid.v4();
       Movie.model.create(theMovie, callback);
     });
   },
