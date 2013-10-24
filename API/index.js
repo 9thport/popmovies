@@ -62,8 +62,8 @@ app.get('/movie/:id', function(req, res) {
   });
 });
 
-app.get('/movies/sortBy', function(req, res) {
-  Movie.sortBy(function(err, dudes) {
+app.get('/movies/sortBy/:field', function(req, res) {
+  Movie.sortBy(req.params.field, function(err, dudes) {
     if(err) {
       res.send({
         error: err.message
