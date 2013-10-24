@@ -4,7 +4,7 @@ var express = require('express'),
     db = mongoose.connection
 
     //Load in the models
-    User = require('./models/user').init(mongoose);
+    Movie = require('./models/movie').init(mongoose);
 
 //Helps parse the request body for JSON POSTs
 app.use(express.bodyParser());
@@ -16,10 +16,11 @@ db.once('open', function() {
 });
 
 //Connect to the database
-mongoose.connect('mongodb://root:n0d3db@mongo.onmodulus.net:27017/uxar4iDa');
+//mongoose.connect('mongodb://root:n0d3db@mongo.onmodulus.net:27017/uxar4iDa');
+mongoose.connect('mongodb://root:n0d31234@mongo.onmodulus.net:27017/pY9pimyj');
 
-app.get('/users', function(req, res) {
-  User.getAll(function(err, dudes) {
+app.get('/movies', function(req, res) {
+  Movie.getAll(function(err, dudes) {
     if(err) {
       res.send({
         error: err.message
@@ -30,8 +31,8 @@ app.get('/users', function(req, res) {
   });
 });
 
-app.get('/user/:id', function(req, res) {
-  User.get(req.params.id, function(err, dude) {
+app.get('/movie/:id', function(req, res) {
+  Movie.get(req.params.id, function(err, dude) {
     if(err) {
       res.send({
         error: err.message
@@ -42,14 +43,14 @@ app.get('/user/:id', function(req, res) {
   });
 });
 
-app.post('/user', function(req, res) {
-  if(!req.body.username) {
+app.post('/movie', function(req, res) {
+  if(!req.body.moviename) {
     return res.send({
-      error: 'Users require at least a username.'
+      error: 'Movies require at least a movie name.'
     });
   }
 
-  User.create(req.body, function(err, dude) {
+  Movie.create(req.body, function(err, dude) {
     if(err) {
       res.send({
         error: err.message
@@ -60,8 +61,8 @@ app.post('/user', function(req, res) {
   });
 });
 
-app.delete('/user/:id', function(req, res) {
-  User.delete(req.params.id, function(err) {
+app.delete('/movie/:id', function(req, res) {
+  Movie.delete(req.params.id, function(err) {
     if(err) {
       res.send({
         error: err.message
