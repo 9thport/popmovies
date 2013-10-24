@@ -24,7 +24,7 @@ var Movie = {
         return callback(err);
       }
 
-      // usr.id = uuid.v4();
+      theMovie.id = uuid.v4();
       Movie.model.create(theMovie, callback);
     });
   },

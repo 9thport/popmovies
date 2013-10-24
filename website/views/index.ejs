@@ -1,6 +1,14 @@
 <% include header %>
-  <% users.forEach(function(user){ %>
-    <a href="/user/<%= user.id %>"><img src="<%= user.image %>"/></a>
-  <% }) %>
-  <a href="/new"><img src="http://placehold.it/64x64&text=NEW"/></a>
+	<table>
+		<% movies.forEach(function(movie){ %>
+
+			<tr>
+				<!--  for each attribute of the movie we're currently processing, create one cell for each-->
+				forEach tablerow.length
+				<td>  movi.attribute-1  </td>
+			</tr>
+			
+
+  		<% }) %>
+	</table>
 <% include footer %>
