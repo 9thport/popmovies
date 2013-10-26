@@ -84,8 +84,4 @@ var Movie = {
   }
 };
 
-<<<<<<< HEAD
 module.exports = Movie;
-=======
-module.exports = Movie;
->>>>>>> 1eec5635c37500045817409b77ac0bf04e6b8a36

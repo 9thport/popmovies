@@ -1,13 +1,9 @@
-<!--form>
-	
-	<label class="formdiv"> Movie title: </label><div class="inputdiv"><input type="text" name="movietitle"></div><br>
-	<label class="formdiv"> Rating: </label><div class="inputdiv"><input type="text" name="rating"></div><br>
-	<label class="formdiv"> Votes: </label><div class="inputdiv"><input type="text" name="votes"></div><br>
-	<label class="formdiv"> Poster: </label><div class="inputdiv"><input type="text" name="imageurl"></div><br>
-
-</form -->	
-
-test
-
-
-	
+<% include header %>
+<form>
+        
+        <label class="formdiv"> Movie title: </label><div class="inputdiv"><input type="text" value="<%=title%>"></div><br>
+        <label class="formdiv"> Rating: </label><div class="inputdiv"><input type="text" value="<%=rating%>"></div><br>
+        <label class="formdiv"> Votes: </label><div class="inputdiv"><input type="text" value="<%=votes%>"></div><br>
+        </div><br>
+</form>        
+<% include footer %>
